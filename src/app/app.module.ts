@@ -6,14 +6,17 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    LazyLoadImageModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -24,6 +27,7 @@ import { AppComponent } from './app.component';
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
