@@ -1,6 +1,5 @@
 {
-    "common":{
-        "home":"inicio {{param}}"
-    }
-    
+  "common": {
+    "home": "inicio {{param}}"
+  }
 }
